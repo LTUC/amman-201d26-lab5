@@ -85,7 +85,7 @@ function sumArray(sumArr) {
   for (let i=0;i<testArray.length;i++){
     arraySum+=testArray[i];
   }
-  return [arraySum,`2,3,4 was passed in as an array of numbers, and 9 is their sum.`]
+  return [arraySum,`${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${arraySum} is their sum.`]
 }
 
 // Here is the test for sumArray(); uncomment it to run it
