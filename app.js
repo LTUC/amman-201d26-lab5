@@ -60,7 +60,8 @@ function sumAndMultiply(a, b, c) {
   //eslint-disable-line
 let summation03= sum(a,b)[0]+c;
 let multiplication03= multiply(a,b)[0]*c;
-  return [summation03,multiplication03,`${a} and ${b} and ${c} sum to ${summation03}.`,`The product of ${a} and ${b} and ${c} is ${multiplication03}.`]
+
+return [summation03,multiplication03,`${a} and ${b} and ${c} sum to ${summation03}.`,`The product of ${a} and ${b} and ${c} is ${multiplication03}.`]
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
