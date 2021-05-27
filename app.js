@@ -14,12 +14,12 @@ function sum(a, b) {
   return [answer,`The sum of ${a} and ${b} is ${answer}.`]
 
 }
-// Here is the test for sum(); uncomment it to run it
+sum();
 testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
-/////////////////////////////////////
+//////////////////////////////////////////
 /* Problem 2
 Write a function called multiply() that takes in two numbers as arguments and returns an array where the first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 
@@ -31,10 +31,16 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) {
   //eslint-disable-line
 
+  
 }
+
+
+multiply(); 
+testMultiply(5,9);
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
+
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -52,12 +58,15 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) {
   //eslint-disable-line
+let sumOfTwo=sum(a,b)[0]; //number
+let sumOfThree=sum(sumOfTwo,c)[0]; //number a+b+c
+let multiplyOfTwo=multiply(a,b)[0]; //number a*b
+let multiplyOfThree=multiply(multiplyOfTwo,c)[0]; //number a*b*c
 
-  
+return[sumOfThree,multiplyOfThree,`${a} and ${b} and ${c} sum to ${sumOfThree}.`,`The product of ${a} and ${b} and ${c} is ${multiplyOfThree}.`]
+
 }
-
-// Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
