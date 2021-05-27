@@ -54,12 +54,36 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) {
   //eslint-disable-line
+  
+  let firstElement=sum(a,b);
+  let secondElement =sum(firstElement[0],c);
+
+  let thirdElement =multiply(a,b);
+  let fourthElement=multiply(thirdElement[0],c)
+  // if(firstElement=sum){
+  //   console.log("true");
+  // }else{
+  //   console.log("false");
+  // }
+
+// let msg1 = `${} and 7 and 5 sum to 16.`
+
+
+let arr =  [secondElement[0],fourthElement[0] ,`${a} and ${b} and ${c} sum to ${secondElement[0]}.` , `The product of ${a} and ${b} and ${c} is ${fourthElement[0]}.`] 
+
+    return arr;
+
+  
+    // return[firstElement  , `${a} , ${b} , ${c}  = ${firstElement }.` ]
+   
+    // ,`the sum of ${a} , ${b} ,${c} = ${firstElement}.` `and the multiply of ${a} ,${b},${b} 
+    // = ${secondElement}`
 
   
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
