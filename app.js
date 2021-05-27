@@ -14,7 +14,7 @@ function sum(a, b) {
   return [answer,`The sum of ${a} and ${b} is ${answer}.`];
 }
 // Here is the test for sum(); uncomment it to run it
-testSum(4, 7);
+sum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -36,7 +36,7 @@ function multiply(a, b) {
 }
 
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5,9);
+multiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -55,19 +55,19 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) {
   let answer1;
   let answer2;
-  answer1[0]=testSum(a,b);
-  answer1[0]=testSum(c,answer1[0]);
-  answer2[0]=testMultiply(a,b);
-  answer2[0]=testMultiply(c,answer2[0]);
+  answer1=sum(a,b)[0];
+  answer1=sum(c,answer1)[0];
+  answer2=multiply(a,b)[0];
+  answer2=multiply(c,answer2)[0];
 
 
-  return[answer1,answer2,`The sum of ${a} and ${b}  and ${c} is ${answer1[0]}.`,`The product of ${a} and ${b} and ${c} is ${answer2[0]}.`];
+     return[answer1[0],answer2[0],`${a} and ${b} and ${c} sum to ${answer1[0]}.`,`The product of ${a} and ${b} and ${c} is ${answer2[0]}.`];
 
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
- testSumAndMultiply(4,7,5);
 
+sumAndMultiply(4,7,5);
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
@@ -88,7 +88,7 @@ function sumArray(sumArr)
   var answer3;
   for(let x=0;x<sumArr.length;x++)
   {
-     answer3[0]=testSum(sumArr[x],answer3[0]);
+     answer3=(sum(sumArr[x],answer3)[0]);
     
   }
   return [answer3[0],`The sum of ${sumArr} is ${answer3[0]}.`];
@@ -97,7 +97,8 @@ function sumArray(sumArr)
 
 // Here is the test for sumArray(); uncomment it to run it
 
- testSumArray(testArray);
+sumArray(testArray);
+
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -115,18 +116,17 @@ Test this function by hand in the console to get it working, and when you think 
 function multiplyArray(multArr) {
   
   var answer4;
-  for(let x=0;x<multArr.length;x++)
+  for(let x=0;x<3;x++)
   {
-     answer4[0]=(multArr[x],answer4[0]);
+     answer4=(multArr[x],answer4);
     
   }
-  return [answer4[0],`The product of ${multArr} is ${answer4[0]}.`]
+  return [answer4,`The product of ${multArr} is ${answer4}.`]
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
- testMultiplyArray(testArray);
-
+multiplyArray(testArray);
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
 // You're done! Submit the link to the repo following the instructions in Canvas. Or, try out the stretch goal below...
@@ -150,10 +150,19 @@ let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) {
 
+  var answer5;
+  for(let x=0;x<dynamicArray.length;x++)
+  {
+     answer5=(dynamicArray[x],answer5);
+    
+  }
+  return [answer5,`The product of ${dynamicArray} is ${answer5}.`]
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
+multiplyAnyArray(testDynamicArray);
+
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
