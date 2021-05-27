@@ -13,6 +13,8 @@ function sum(a, b) {
   let answer=a+b;
   return [answer,`The sum of ${a} and ${b} is ${answer}.`]
 }
+
+sum();
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
 
@@ -27,13 +29,14 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b) {
+function multiply (a, b) {
   //eslint-disable-line
   let answer=a*b;
   return[answer,`The product of ${a} and ${b} is ${answer}.`]
 
   
 }
+multiply();
 
 // Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);
@@ -53,10 +56,21 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
+
+  let I= sum(a,b)[0];
+  let II= sum(I,c)[0];
+  let III= multiply(a,b)[0];
+  let IIII= multiply(III,c)[0];
+
+  return [II, IIII, +a + 'and' + b + 'and' + c + 'sum to' + I + ".", 'The product of'  + a + " and " + b + " and " + c + " is " + IIII + "."];
+
   //eslint-disable-line
 
   
 }
+sumAndMultiply();
+testSumAndMultiply(4,7,5);
+
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
