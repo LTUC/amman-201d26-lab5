@@ -128,13 +128,31 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
+
+
+
 let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) {
   //eslint-disable-line
+  let productOfArray = 1;
+  for (let i = 0; i < dynamicArray.length; i++) {
+    productOfArray = multiply(productOfArray, dynamicArray[i])[0];
+  }
+
+  let arrayNumConcat = '';
+  for (let i = 0; i < dynamicArray.length; i++) {
+    if (i != dynamicArray.length - 1) {
+      arrayNumConcat += `${dynamicArray[i]},`;
+    } else
+      arrayNumConcat += `${dynamicArray[i]}`;
+  }
+
+  return [productOfArray, `The numbers ${arrayNumConcat} have a product of ${productOfArray}.`];
+
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
