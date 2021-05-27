@@ -108,14 +108,24 @@ to do this. This function should handle an array containing three elements. Howe
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
+
 function multiplyArray(multArr) {
   
   //eslint-disable-line
+  //  let mull=(multiply((multiply(testArray[0],testArray[1])[0]),testArray[2])[0]);
+  let multi=1;
+  for(let i=0;i<testArray.length;i++){
+    if (testArray[i]==0){
+      multi= multiply(testArray[i] , 1)[0];
+      }
+      else{
+       multi=multiply( multi, testArray[i])[0];
+      }
+ }
+  return [multi,`The numbers ${testArray} have a product of ${multi}.`]
 }
-
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
-
+testMultiplyArray(testArray);
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
 
@@ -147,21 +157,10 @@ let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) {
   //eslint-disable-line
-  let multi=1;
-   for(let i=0;i<testDynamicArray.length;i++){
-     if (testDynamicArray[i]==0){
-       multi= multiply(testDynamicArray[i] , 1)[0];
-       }
-       else{
-        multi=multiply( multi, testDynamicArray[i])[0];
-       }
-  }
-
-  return [multi,`The numbers ${testDynamicArray} have a product of ${multi}.`]
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-testMultiplyAnyArray(testDynamicArray);
+// testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
