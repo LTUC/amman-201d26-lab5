@@ -14,7 +14,7 @@ function sum(a, b) {
   return [answer,`The sum of ${a} and ${b} is ${answer}.`]
 }
 // Here is the test for sum(); uncomment it to run it
-testSum(4, 7);
+testSum(4,7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -59,9 +59,10 @@ function sumAndMultiply(a, b, c) {
   let answer3= multiply(a,b)[0];
   let answer4= multiply(answer3,c)[0];
  return [answer2,answer4,a+' and '+b+' and '+c +' sum to '+answer2 +'.' ,'The product of '+a+ ' and ' +b+ ' and '+c+ ' is '+answer4+ '.'];
+//return[answer2,answer4,``];
   
 }
-sumAndMultiply(4,7,5);
+
 // Here is the test for sumAndMultiply(); uncomment it to run it
  testSumAndMultiply(4,7,5);
 
@@ -81,13 +82,29 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
-
-  //eslint-disable-line
+ let answer5=0;
+let answer6=0;
+let num=0;
+for(let i=0;i<sumArr.length;i=i+2){
+  if (i==sumArr.length-1){
+    answer5= sum(sumArr[i],num)[0];
+    answer6= sum(answer6,answer5)[0];
+    
+  }else {
+    answer5= sum(sumArr[i],sumArr[i+1])[0];
+    answer6= sum(answer6,answer5)[0];
+  }
+  
+ }  return [answer6,`${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${answer6} is their sum.`] ; 
 }
+ //return console.log(answer6);
+// return [answer6] ;
+//   //eslint-disable-line
+ sumArray(testArray);
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+ testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
