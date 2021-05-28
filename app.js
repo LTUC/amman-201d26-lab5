@@ -135,7 +135,7 @@ function multiplyArray(multArr) {
 
 // Don't forget to create a new branch for your work on the next question, if you attempt it.
 
-/////////////////////////////////////
+// ///////////////////////////////////
 /* STRETCH GOAL: Problem 6
 Write a function called multiplyAnyArray() that takes an array of numbers of any length as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
 
@@ -151,8 +151,35 @@ Test this function by hand in the console to get it working, and when you think 
 let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) {
+  
+  let multArr1=[];
+   for(let i=0;i<testDynamicArray.length;i++){
+     dynamicArray=dynamicArray*testDynamicArray[i];
+    //  multArr1=testDynamicArray[i]*testDynamicArray[i-1];
+    //  console.log(multArr1);
+    //  let dynamicArray1=testDynamicArray[i-2]*multArr1;
+    //  dynamicArray=testDynamicArray[i-3]*dynamicArray1;
+
+     console.log(dynamicArray);
+     
+
+     console.log(testDynamicArray[i],testDynamicArray[i-1],testDynamicArray[i-2]);
+      
+  }
+
+
+    
+
+  
+
+  
+  
+  
+  
+  return dynamicArray; 
   //eslint-disable-line
 }
+multiplyAnyArray(testDynamicArray);
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
