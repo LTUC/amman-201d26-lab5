@@ -41,7 +41,10 @@ testMultiply(5,9);
 
 /////////////////////////////////////
 /* Problem 3
-Write a function called sumAndMultiply() that takes in three numbers as separate arguments and returns an array where the first element is the sum of those three numbers, the second element is the product of those three numbers,  and the third and fourth elements are strings that EXACTLY follow this example and use the values that were input into the function:
+Write a function called sumAndMultiply() that takes in three numbers as separate arguments and returns an 
+array where the first element is the sum of those three numbers, the second element is the product of those
+ three numbers,  and the third and fourth elements are strings that EXACTLY follow this example and use the 
+ values that were input into the function:
 
 Third element: "4 and 7 and 5 sum to 16."
 Fourth element: "The product of 4 and 7 and 5 is 140."
@@ -53,12 +56,24 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) {
   //eslint-disable-line
+  // let sumResult2=(sum((sum(a,b)[0]),c)[0]);
+  // let multiResult1=(multiply((multiply(a,b)[0]),c)[0]);
+
+  let multi=1;
+  let summ=0;
+
+  summ=sum(a,b)[0];
+  summ=sum(summ,c)[0];
+  multi=multiply(a,b)[0];
+  multi=multiply(multi,c)[0];
 
   
-}
+  return [summ,multi,`${a} and ${b} and ${c} sum to ${summ}.`,`The product of ${a} and ${b} and ${c} is ${multi}.`]
+  
+  }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -85,23 +100,11 @@ let testArray = [2, 3, 4]; //eslint-disable-line
 function sumArray(sumArr) {
  
   // let arraySum=(sum((sum(testArray[0],testArray[1])[0]),testArray[2])[0]);
-  let arraySum=0;
-   for(let i=0;i<testArray.length;i++){
-     if (testArray[i]==0){
-       arraySum= sum(testArray[i] , 1)[0];
-       }
-       else{
-        arraySum=sum( arraySum, testArray[i])[0];
-       }
-  }
-
-
-  return [arraySum,`${testArray} was passed in as an array of numbers, and ${arraySum} is their sum.`]
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-testSumArray(testArray);
+// testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
