@@ -97,8 +97,7 @@ for(let i=0;i<sumArr.length;i=i+2){
   
  }  return [answer6,`${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${answer6} is their sum.`] ; 
 }
- //return console.log(answer6);
-// return [answer6] ;
+ 
 //   //eslint-disable-line
  sumArray(testArray);
 
@@ -120,13 +119,29 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) {
+
+  let answer5=0;
+let answer6=1;
+let num=1;
+for(let i=0;i<multArr.length;i=i+2){
+  if (i==multArr.length-1){
+    answer5= multiply(multArr[i],num)[0];
+    answer6= multiply(answer6,answer5)[0];
+    
+  }else {
+    answer5= multiply(multArr[i],multArr[i+1])[0];
+    answer6= multiply(answer6,answer5)[0];
+  }
+  
+ } 
+  return [answer6,`The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${answer6}.`] ; 
   
   //eslint-disable-line
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+ testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
