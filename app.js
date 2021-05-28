@@ -14,7 +14,7 @@ function sum(a, b) {
   return [answer,`The sum of ${a} and ${b} is ${answer}.`]
 }
 // Here is the test for sum(); uncomment it to run it
-testSum(4, 7);
+testSum(4,7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -54,12 +54,17 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) {
   //eslint-disable-line
-
+  let answer1= sum(a,b)[0];
+  let answer2= sum(answer1,c)[0];
+  let answer3= multiply(a,b)[0];
+  let answer4= multiply(answer3,c)[0];
+ return [answer2,answer4,a+' and '+b+' and '+c +' sum to '+answer2 +'.' ,'The product of '+a+ ' and ' +b+ ' and '+c+ ' is '+answer4+ '.'];
+//return[answer2,answer4,``];
   
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+ testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -77,13 +82,28 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
-
-  //eslint-disable-line
+ let answer5=0;
+let answer6=0;
+let num=0;
+for(let i=0;i<sumArr.length;i=i+2){
+  if (i==sumArr.length-1){
+    answer5= sum(sumArr[i],num)[0];
+    answer6= sum(answer6,answer5)[0];
+    
+  }else {
+    answer5= sum(sumArr[i],sumArr[i+1])[0];
+    answer6= sum(answer6,answer5)[0];
+  }
+  
+ }  return [answer6,`${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${answer6} is their sum.`] ; 
 }
+ 
+//   //eslint-disable-line
+ sumArray(testArray);
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+ testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -99,13 +119,29 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) {
+
+  let answer5=0;
+let answer6=1;
+let num=1;
+for(let i=0;i<multArr.length;i=i+2){
+  if (i==multArr.length-1){
+    answer5= multiply(multArr[i],num)[0];
+    answer6= multiply(answer6,answer5)[0];
+    
+  }else {
+    answer5= multiply(multArr[i],multArr[i+1])[0];
+    answer6= multiply(answer6,answer5)[0];
+  }
+  
+ } 
+  return [answer6,`The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${answer6}.`] ; 
   
   //eslint-disable-line
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+ testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
@@ -129,10 +165,27 @@ Test this function by hand in the console to get it working, and when you think 
 let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) {
+
+  let answer5=0;
+let answer6=1;
+let num=1;
+for(let i=0;i<dynamicArray.length;i=i+2){
+  if (i==dynamicArray.length-1){
+    answer5= multiply(dynamicArray[i],num)[0];
+    answer6= multiply(answer6,answer5)[0];
+    
+  }else {
+    answer5= multiply(dynamicArray[i],dynamicArray[i+1])[0];
+    answer6= multiply(answer6,answer5)[0];
+  }
+  
+ } 
+  return [answer6,`The numbers ${dynamicArray[0]},${dynamicArray[1]},${dynamicArray[2]},${dynamicArray[3]},${dynamicArray[4]} have a product of ${answer6}.`] ; 
+  
   //eslint-disable-line
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+ testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
