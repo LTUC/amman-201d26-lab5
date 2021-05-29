@@ -55,27 +55,20 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) {
 
+function sumAndMultiply(a, b, c) {
+  
   let I= sum(a,b)[0];
   let II= sum(I,c)[0];
-  let III= multiply(a,b)[0];
-  let IIII= multiply(III,c)[0];
+  let IX= multiply(a,b)[0]; 
+  let IXX= multiply(IX,c)[0];
+   return [II,IXX,`${a} and ${b} and ${c} sum to ${II}.`,`The product of ${a} and ${b} and ${c} is ${IXX}.`]
 
-  return [II, IIII, +a + 'and' + b + 'and' + c + 'sum to' + I + ".", 'The product of'  + a + " and " + b + " and " + c + " is " + IIII + "."];
-
-  //eslint-disable-line
-
-  
 }
-sumAndMultiply();
-testSumAndMultiply(4,7,5);
+sumAndMultiply
 
-
-// Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
-
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
+ testSumAndMultiply(4,7,5);
+    
 
 /////////////////////////////////////
 /* Problem 4
@@ -87,13 +80,31 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
-// Write your code here
-let testArray = [2, 3, 4]; //eslint-disable-line
+let testArray = [2, 3, 4];
+function sumArray([x,y,z]) {
 
-function sumArray(sumArr) {
-
-  //eslint-disable-line
+  let a = sum(x,y)[0];
+  let b = sum(a,z)[0];
+  return [b ,  x + "," + y + "," + z + " was passed in as an array of numbers, and " + b + " is their sum."]
+  
 }
+
+sumArray([]);
+testSumArray(testArray);
+
+
+/*let testArray = [2, 3, 4]; //eslint-disable-line
+
+function sumArray([x,y,z]) {
+let a=sum(x,y)[0];
+let b=sum(a,z)[0];
+return[a,`${x},${y},${z} was passed in as an array of numbers' , 'and ${b} is their sum.`]
+
+}
+
+sumArray([]);
+testSumArray(testArray)
+*/
 
 // Here is the test for sumArray(); uncomment it to run it
 
