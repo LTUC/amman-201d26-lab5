@@ -116,7 +116,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) {
 
-  let firstFuncMultiply = multiply(testArray[0], testArray[1])[0];
+  let firstFuncMultiply = multiply(testArray[0],testArray[1])[0];
   let secondFuncMultiply = multiply(testArray[2], firstFuncMultiply)[0];
 
   return [secondFuncMultiply, `The numbers ${testArray[0]},${testArray[1]},${testArray[2]} have a product of ${secondFuncMultiply}.`]
