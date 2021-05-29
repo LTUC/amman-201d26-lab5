@@ -20,7 +20,7 @@ testSum(4, 7);
 
 /////////////////////////////////////
 /* Problem 2
-Write a function called multiply() that takes in two numbers as arguments and returns an array where the first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
+Write a function   called multiply() that takes in two numbers as arguments and returns an array where the first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 
 "The product of 5 and 9 is 45."
 
@@ -97,16 +97,12 @@ uncomment the call for the testSumArray() function and see if the test passes.*/
 let testArray = [2, 3, 4]; //eslint-disable-line
 function sumArray(sumArr) {
   //eslint-disable-line
-  let sum1= sum(testArray[0],testArray[1])[0];
-   sumArr= sum(sum1,testArray[2])[0];
-   console.log(`ANs is ${sumArr}`);
   
-  return[sumArr,`${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sumArr} is their sum.`]
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-testSumArray(testArray);
+//testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -125,15 +121,18 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) {
   //eslint-disable-line
-  let prod1= multiply(multArr[0],multArr[1])[0]; 
-  let fmultArr= multiply(prod1,multArr[2])[0];
+
+  let prod1= multiply(testArray[0],testArray[1])[0]; 
+  let fmultArr= multiply(prod1,testArray[2])[0];
   console.log(`ANs is ${fmultArr}`)
 
-return[fmultArr,`The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${fmultArr}.`]
+return[fmultArr,`The numbers ${testArray[0]},${testArray[1]},${testArray[2]} have a product of ${fmultArr}.`]
+
+
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
- testMultiplyArray(testArray);
+ //testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
