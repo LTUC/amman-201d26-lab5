@@ -65,7 +65,7 @@ function sumAndMultiply(a, b, c) {
    return [II,IXX,`${a} and ${b} and ${c} sum to ${II}.`,`The product of ${a} and ${b} and ${c} is ${IXX}.`]
 
 }
-sumAndMultiply
+sumAndMultiply();
 
  testSumAndMultiply(4,7,5);
     
@@ -93,19 +93,6 @@ sumArray([]);
 testSumArray(testArray);
 
 
-/*let testArray = [2, 3, 4]; //eslint-disable-line
-
-function sumArray([x,y,z]) {
-let a=sum(x,y)[0];
-let b=sum(a,z)[0];
-return[a,`${x},${y},${z} was passed in as an array of numbers' , 'and ${b} is their sum.`]
-
-}
-
-sumArray([]);
-testSumArray(testArray)
-*/
-
 // Here is the test for sumArray(); uncomment it to run it
 
 // testSumArray(testArray);
@@ -124,10 +111,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) {
-  
-  //eslint-disable-line
-
+ 
+  let product = multiply(multArr[0], multArr[1]);
+  let productA = multiply(product[0], multArr[2]);
+  productA[0] = productA[0];
+  let result = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${productA[0]}.`;
+  productA[1] = result;
+  return productA;
+  //return[`The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${productA[0]}.`];
+ 
 }
+//multiplyArray();
+testMultiplyArray(testArray);
+  //eslint-disable-line
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
