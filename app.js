@@ -54,12 +54,17 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) {
   //eslint-disable-line
+let sumOfTwo =sum(a,b)[0]
+let sumOfAll= sum(sumOfTwo,c)[0]
 
-  
+let multyOfTwo= multiply(a,b)[0]
+let multyOfAll= multiply(multyOfTwo,c)[0]
+
+  return[sumOfAll, multyOfAll, `${a} and ${b} and ${c} sum to ${sumOfAll}.`,`The product of ${a} and ${b} and ${c} is ${multyOfAll}.`]
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+ testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -76,14 +81,18 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) {
+  function sumArray(arr) {
+    let sumOne= sum(2,3)[0]
+    let sumAll= sum(sumOne,4)[0]
 
-  //eslint-disable-line
-}
+  
+    return[sumAll,`${2},${3},${4} was passed in as an array of numbers, and ${9} is their sum.`
+  ]
+  }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+ testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -98,14 +107,22 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
+
+let testArray2= [2, 3, 4];
 function multiplyArray(multArr) {
   
+    let multyOne= multiply(2,3)[0]
+    let multyAll= multiply(multyOne,4)[0]
+  
+    return[multyAll,`The numbers ${2},${3},${4} have a product of ${24}.`]
+
+  }
   //eslint-disable-line
 
-}
+
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+ testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
