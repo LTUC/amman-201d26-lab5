@@ -13,6 +13,8 @@ function sum(a, b) {
   let answer=a+b;
   return [answer,`The sum of ${a} and ${b} is ${answer}.`]
 }
+
+sum();
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
 
@@ -27,13 +29,14 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b) {
+function multiply (a, b) {
   //eslint-disable-line
   let answer=a*b;
   return[answer,`The product of ${a} and ${b} is ${answer}.`]
 
   
 }
+multiply();
 
 // Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);
@@ -52,16 +55,20 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
+
 function sumAndMultiply(a, b, c) {
-  //eslint-disable-line
-
   
+  let I= sum(a,b)[0];
+  let II= sum(I,c)[0];
+  let IX= multiply(a,b)[0]; 
+  let IXX= multiply(IX,c)[0];
+   return [II,IXX,`${a} and ${b} and ${c} sum to ${II}.`,`The product of ${a} and ${b} and ${c} is ${IXX}.`]
+
 }
+sumAndMultiply();
 
-// Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
-
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
+ testSumAndMultiply(4,7,5);
+    
 
 /////////////////////////////////////
 /* Problem 4
@@ -73,13 +80,18 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
-// Write your code here
-let testArray = [2, 3, 4]; //eslint-disable-line
+let testArray = [2, 3, 4];
+function sumArray([x,y,z]) {
 
-function sumArray(sumArr) {
-
-  //eslint-disable-line
+  let a = sum(x,y)[0];
+  let b = sum(a,z)[0];
+  return [b ,  x + "," + y + "," + z + " was passed in as an array of numbers, and " + b + " is their sum."]
+  
 }
+
+sumArray([]);
+testSumArray(testArray);
+
 
 // Here is the test for sumArray(); uncomment it to run it
 
@@ -99,10 +111,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) {
-  
-  //eslint-disable-line
-
+ 
+  let product = multiply(multArr[0], multArr[1]);
+  let productA = multiply(product[0], multArr[2]);
+  productA[0] = productA[0];
+  let result = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${productA[0]}.`;
+  productA[1] = result;
+  return productA;
+  //return[`The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${productA[0]}.`];
+ 
 }
+//multiplyArray();
+testMultiplyArray(testArray);
+  //eslint-disable-line
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
@@ -126,11 +147,19 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
+
+let testDynamicArray = [1, 2, 3, 4, 5]; 
 
 function multiplyAnyArray(dynamicArray) {
-  //eslint-disable-line
+
+  let TestMultiply1 = multiply(testDynamicArray[0],testDynamicArray[1]);
+  let TestMultiply2 = multiply(TestMultiply1[0],testDynamicArray[2]);
+  let TestMultiply3 = multiply(TestMultiply2[0],testDynamicArray[3]);
+  let TestMultiply4 = multiply(TestMultiply3[0],testDynamicArray[4]);
+  return [TestMultiply4[0], "The numbers 1,2,3,4,5 have a product of 120."]
+  
 }
+testMultiplyAnyArray(testDynamicArray);
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
